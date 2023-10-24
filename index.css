@@ -81,6 +81,9 @@ table {
     color: white;
     border-radius: 20px;
 }
+.headerTxt button:hover {
+    cursor: pointer;
+}
 
 .hidden {
     display: none;
@@ -89,4 +92,24 @@ table {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
+    margin-top: 50px;
+}
+.card {
+    display: flex; 
+    gap: 15px;
+    color: white;
+    flex-direction: column;
+    background-color: #131B23;
+    padding: 30px 30px;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+.card h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+.card h2 {
+    font-size: 1.2rem;
+
 }
