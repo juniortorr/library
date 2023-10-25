@@ -54,7 +54,7 @@ table {
     width: 100%;
 }
 .header {
-    height: 200px;
+    height: 15vh;
     width: 100%;
     border-bottom: 1px solid white;
     display: flex;
@@ -72,9 +72,9 @@ table {
     font-size: 3rem;
 }
 .headerTxt button {
-    height: 75px;
+    height: 65px;
     width:  250px;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     outline: none;
     border: 2px solid white;
     background-color: #131B23;
@@ -94,6 +94,8 @@ table {
     flex-wrap: wrap;
     margin: auto;
     margin-top: 50px;
+    gap: 10px;
+    justify-content: center;
 }
 .card {
     display: flex; 
