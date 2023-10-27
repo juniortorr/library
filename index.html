@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -15,27 +18,17 @@
         </div>
 
     </div>
-    <div class="libraryContainer">
-        <div class="card">
-            <h1>Title: Daisy Jones & The Six</h2>
-            <h2>Author: Taylor Jenkins Reed</h2>
-            <h2>254 Pages</h2>
-        </div>
-    </div>
+    <div class="libraryContainer"></div>
 
     <div class="popUp hidden">
-        <form action="/">
-            <label for="title">Title</label>
-            <input id="title" type="text">
-
-            <label for="author">Author</label>
-            <input id="author" type="text">
-
-            <label for="pages">Pages</label>
-            <input id="pages" type="text">
-            <button type="submit">Submit</button>
+        <h1>Enter a New Book</h1>
+        <form action="">
+            <input id="title" type="text" placeholder="Book Title">
+            <input id="author" type="text" placeholder="Author">
+            <input id="pages" type="text" placeholder="Number of Pages">
+            <button class="submit">Submit</button>
         </form>
-        <button>Close</button>
+        <button class="close">Close</button>
     </div>
 </div>
     <script src="index.js"></script>
