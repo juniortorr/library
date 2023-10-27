@@ -29,6 +29,7 @@ myLibrary.push(divergent);
 myLibrary.push(starWars);
 
 
+
 // create function that will create a card for each book
 
 function createCard(book) {
@@ -43,6 +44,10 @@ function createCard(book) {
     pageNumber.textContent = `Pages: ${book.pages}`;
     const readCheck = document.createElement('div');
     const read = document.createElement('h2');
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete'
+    deleteBtn.classList.add('delete')
+    deleteBtn.addEventListener('click', () => removeBook(title.textContent, card))
     readCheck.classList.add('readCheck');
     read.textContent = 'Completed:'
     const img1 = document.createElement('img');
@@ -52,20 +57,35 @@ function createCard(book) {
     img2.setAttribute('src', 'imgs/checkmark.png');
     img2.classList.add('checkmark');
     img2.classList.add('hidden')
-    img1.addEventListener('click', () => showCheckMark(img1, img2));
-    img2.addEventListener('click', () => showCheckMark(img2, img1));
+    img1.addEventListener('click', () => toggleCheckMark(img1, img2));
+    img2.addEventListener('click', () => toggleCheckMark(img2, img1));
     readCheck.append(read);
     readCheck.append(img1);
+    readCheck.append(img2)  
     card.append(title);
     card.append(author); 
     card.append(pageNumber);
     card.append(readCheck);
-    readCheck.append(img2)  
+    card.append(deleteBtn);
+
 }
 
-function showCheckMark (hide, show) {
-    hide.classList.add('hidden')
-    show.classList.remove('hidden');
+
+//  function that deletes cards 
+
+function removeBook(title, card) {
+    myLibrary.forEach((book) => {
+        if(title.includes(book.name)) {
+            const index = myLibrary.indexOf(book)
+            myLibrary.splice(index, 1)
+            console.log(myLibrary)
+            while(card.hasChildNodes()){
+                card.removeChild(card.firstChild)
+            }
+            card.remove();
+            return
+        }
+    })
 }
  
 // create a function that will add a book to a library
@@ -84,15 +104,9 @@ closeBtn.addEventListener('click', () => {
 
 // create a function to toggle checkmark
 
-function toggleCheck() {
-    const newChecks = document.querySelectorAll('.emptyCheck')
-    const newCheck2 = document.querySelectorAll('.checkmark')
-    // newChecks.forEach((check) => {
-    //     check.classList.toggle('hidden');
-    // })
-    // newCheck2.forEach((check) => {
-    //     check.classList.toggle('hidden');
-    // })
+function toggleCheckMark (hide, show) {
+    hide.classList.add('hidden')
+    show.classList.remove('hidden');
 }
 
 // add event listener to submit button 
